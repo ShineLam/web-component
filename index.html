@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <button onclick="show()">open</button>
+  <pop-in options="{}"></pop-in>
+  <!-- <script src='./dialog copy.js'></script> -->
+  <script src='./dialog.js' type='module'></script>
+
+  <script>
+    let popIn = document.querySelector('pop-in')
+    function show() {
+      popIn.options = {
+        title: "我设置的标题",
+        content: "我传入的内容",
+        cnl: '拒绝',
+        cfm: '同意',
+        open: true
+      }
+    }
+    popIn.addEventListener('onCfm', value => {
+      alert(value.detail)
+    })
+  </script>
+
+</body>
+
+</html>
